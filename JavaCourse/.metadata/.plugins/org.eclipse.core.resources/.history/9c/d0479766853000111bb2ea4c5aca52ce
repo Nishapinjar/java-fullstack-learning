@@ -1,0 +1,28 @@
+package com.nisha.filehandling;
+
+import java.io.File;
+
+public class A {
+	
+	// how to create object of file class
+	public static void main(String [] args) {
+	File f = new File("e:\\javaCourse\\t1.txt");
+//	boolean a = f.mkdir();
+//	System.out.println(a);
+//	System.out.println(f);
+//	
+//	boolean a = f.exists();
+//	System.out.println(a);
+//	boolean val = f.delete();
+//	System.out.println(val);
+	
+//	long a = f.length();
+//	System.out.println(a);
+	
+//	String [] a = f.list();
+//	for(String n:a) {
+//		System.out.println(n);
+//	}
+//	System.out.println(a.length);
+	}
+}

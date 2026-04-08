@@ -1,0 +1,12 @@
+package com.nisha.filehandling;
+
+import java.io.File;
+
+public class A {
+	
+	// how to create object of file class
+	
+	File f = new File("e:\\javaCourse\\t1.txt");
+	system.out.println(f);
+
+}
