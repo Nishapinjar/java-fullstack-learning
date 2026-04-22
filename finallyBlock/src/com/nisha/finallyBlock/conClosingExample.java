@@ -1,14 +1,15 @@
-package com.nisha.jdbcjavaconnect;
+package com.nisha.finallyBlock;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class A {
+public class conClosingExample {
 
-	
 	public static void main(String[] args) {
+		Connection con = null;
 		try {
 			
 			Scanner sc = new Scanner(System.in);
@@ -21,7 +22,7 @@ public class A {
 			
 			
 			//connect to database
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/jan_15_db", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/jan_15_db", "root", "root");
 			System.out.println(con);
 			//execute SQL query
 			Statement stmnt = con.createStatement();
@@ -32,14 +33,20 @@ public class A {
 
 			//to insert values by taking input from user using scanner class 
 			
-			stmnt.executeUpdate("inserts into employee values('"+name+"', '"+email+"', '"+mobile+"' )");
+			stmnt.executeUpdate("insert into employee values('"+name+"', '"+email+"', '"+mobile+"' )");
 			//close database connection
 			
-			con.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		} 
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
 		
 	}
 }
